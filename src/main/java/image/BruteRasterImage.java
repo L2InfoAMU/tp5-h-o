@@ -38,5 +38,7 @@ public class BruteRasterImage implements Image {
         this.width = pixels.length ;
         this.height = pixels[0].length ;
     }
-
+    public int getHeight(){
+        return this.height ;
+    }
 }
