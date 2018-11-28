@@ -19,8 +19,17 @@ public class BruteRasterImage implements Image {
     public BruteRasterImage(Color[][] colors){
         pixels = colors.clone();
         this.width = colors.length ;
-        this.height = colors.length ;
+        this.height = colors[0].length ;
 
 
     }
+    public void createRepresentation(){
+
+
+    }
+    public void setPixelColor(Color color, int x, int y){
+        pixels[x][y] = color ;
+    }
+    
+
 }
