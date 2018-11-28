@@ -6,6 +6,7 @@ public class BruteRasterImage implements Image {
     private Color[][] pixels ;
     private int width ,height ;
 
+
     public BruteRasterImage(Color color, int width, int height){
         this.width = width ;
         this.height = height ;
@@ -49,6 +50,5 @@ public class BruteRasterImage implements Image {
     }
     protected void setHeight(int height){
         this.height = height ;
-
     }
 }
