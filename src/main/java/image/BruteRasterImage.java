@@ -16,5 +16,11 @@ public class BruteRasterImage implements Image {
             }
         }
     }
-    
+    public BruteRasterImage(Color[][] colors){
+        pixels = colors.clone();
+        this.width = colors.length ;
+        this.height = colors.length ;
+
+
+    }
 }
