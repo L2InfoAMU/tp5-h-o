@@ -29,5 +29,8 @@ public class PaletteRasterImage implements Image {
         }
 
     }
-    
+    public PaletteRasterImage(int[][] pixels){
+        this.pixels = pixels ;
+
+    }
 }
