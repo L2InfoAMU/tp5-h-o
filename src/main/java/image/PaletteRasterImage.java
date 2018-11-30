@@ -29,8 +29,19 @@ public class PaletteRasterImage implements Image {
         }
 
     }
-    public PaletteRasterImage(int[][] pixels){
-        this.pixels = pixels ;
+    
+    public void setPixelColor(Color color, int x, int y){
 
+        int pixelColor = 0 ;
+        for(int index = 0 ; index < 3 ; index ++){
+            if(color == Color.red)
+                pixelColor = 2 ;
+            if(color == Color.white)
+                pixelColor = 1 ;
+            if(color == color.blue)
+                pixelColor = 0 ;
+        }
+        pixels[x][y] = pixelColor ;
     }
+
 }
