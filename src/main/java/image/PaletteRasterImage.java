@@ -54,6 +54,9 @@ public class PaletteRasterImage implements Image {
         }
         pixels[x][y] = pixelColor ;
     }
-    
+    public void createRepresentation(){
+        pixels = new int[width][height];
+
+    }
 
 }
