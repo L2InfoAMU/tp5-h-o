@@ -56,14 +56,14 @@ public class PaletteRasterImage implements Image {
 
     }
     public Color getPixelColor(int x, int y){
-        if(pixels[x][y] == 0)
-            return Color.blue ;
-        if(pixels[x][y] == 1)
-            return Color.white ;
-        if(pixels[x][y] == 2)
-            return Color.red ;
-        else
-            throw new ArithmeticException("/ aucune couleur");
+
+        for(int index = 0 ; index < 3 ; index ++){
+            if(pixels[x][y] == index) {
+                return color[index];
+            }
+        }
+
+        throw new ArithmeticException("/ aucune couleur");
 
     }
 
