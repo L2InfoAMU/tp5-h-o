@@ -15,12 +15,9 @@ public class PaletteRasterImage implements Image {
         pixels = new int[width][height];
         int pixelColor = 0 ;
         for(int index = 0 ; index < 3 ; index ++){
-            if(color == Color.red)
-                pixelColor = 2 ;
-            if(color == Color.white)
-                pixelColor = 1 ;
-            if(color == color.blue)
-                pixelColor = 0 ;
+            if(color == this.color[index]) {
+                pixelColor = index;
+            }
         }
         for(int x = 0 ;x < width ; x++){
             for(int y = 0 ; y < height ; y++ ){
