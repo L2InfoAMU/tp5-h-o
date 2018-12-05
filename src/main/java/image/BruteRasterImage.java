@@ -39,6 +39,13 @@ public class BruteRasterImage implements Image {
         this.width = pixels.length ;
         this.height = pixels[0].length ;
     }
+    private void setPixelsColor(Color color){
+        for(int x = 0 ;x < width ; x++){
+            for(int y = 0 ; y < height ; y++ ){
+                pixels[x][y] = color ;
+            }
+        }
+    }
     public int getHeight(){
         return this.height ;
     }
@@ -51,4 +58,5 @@ public class BruteRasterImage implements Image {
     protected void setHeight(int height){
         this.height = height ;
     }
+
 }

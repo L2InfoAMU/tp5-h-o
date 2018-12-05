@@ -1,6 +1,6 @@
 package image;
 
-import java.awt.*;
+import javafx.scene.paint.Color;
 
 public class PaletteRasterImage implements Image {
 
@@ -59,12 +59,13 @@ public class PaletteRasterImage implements Image {
 
         for(int index = 0 ; index < 3 ; index ++){
             if(pixels[x][y] == index) {
-                return color[index];
+                return color[index] ;
+
             }
         }
 
-        throw new ArithmeticException("/ aucune couleur");
+            throw new ArithmeticException("/ aucune couleur");
 
-    }
+        }
 
 }
