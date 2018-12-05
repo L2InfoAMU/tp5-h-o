@@ -74,5 +74,11 @@ public class PaletteRasterImage implements Image {
     public int getHeight(){
         return height ;
     }
+    protected void setWidth(int width){
+        this.width = width ;
+    }
+    protected void Height(int heiht){
+        this.height = height ;
+    }
 
 }
