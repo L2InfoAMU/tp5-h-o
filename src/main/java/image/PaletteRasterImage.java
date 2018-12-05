@@ -68,5 +68,11 @@ public class PaletteRasterImage implements Image {
             }
         }
     }
+    public int getWidth(){
+        return width ;
+    }
+    public int getHeight(){
+        return height ;
+    }
 
 }
