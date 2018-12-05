@@ -49,14 +49,22 @@ public class PaletteRasterImage implements Image {
 
         return this.palette.get(indexesOfColors[x][y]);
         }
-    public void setPixelsColor(Color[][] pixels){
-        int numberColor = 0 ;
-        for(int index = 0 ; index < 3 ; index ++)
-    }
+
     private void setPixelsColor(Color color){
         for(int x = 0 ; x < width ; x++){
             for(int y = 0 ; y < height ; y++){
                 this.setPixelColor(color , x , y) ;
+            }
+        }
+    }
+    private void setPixelsColor(Color[][] pixels){
+        if(pixels.length > this.width || pixels[0].length > height)
+            throw new ArithmeticException("pas la même taille");
+        else{
+            for(int x = 0 ; x < width ; x++){
+                for(int y = 0 ; y < height ; y++){
+                    this.setPixelColor(pixels[x][y] , x , y) ;
+                }
             }
         }
     }
