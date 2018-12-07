@@ -48,4 +48,11 @@ public class SparseRasterImage extends RasterImage implements Image {
             }
         }
     }
+    private void setPixelsColor(Color color){
+        for(int x = 0 ;x < width ; x++ ){
+            for(int y = 0 ; y < height ; y++){
+                pixelMap.put(this.pixels[x][y],color);
+            }
+        }
+    }
 }
