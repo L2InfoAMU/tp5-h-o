@@ -13,9 +13,10 @@ public class PaletteRasterImage implements Image {
     private int[][] indexesOfColors ;
 
     public PaletteRasterImage(Color color, int width, int height){
-        this.createRepresentation();
+
         this.width = width ;
         this.height = height ;
+        this.createRepresentation();
         for(int x = 0 ; x < width ; x++){
             for(int y = 0 ; y < height ; y++){
                 this.setPixelColor(color , x , y) ;
@@ -25,10 +26,10 @@ public class PaletteRasterImage implements Image {
 
     }
     public PaletteRasterImage(Color[][] pixels){
-        this.createRepresentation();
+
         this.width = pixels.length ;
         this.height = pixels[0].length ;
-
+        this.createRepresentation();
         for(int x = 0 ; x < width ; x++){
             for(int y = 0 ; y < height ; y++){
                 this.setPixelColor(pixels[x][y],x,y) ;
