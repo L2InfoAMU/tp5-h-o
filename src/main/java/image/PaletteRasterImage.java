@@ -9,13 +9,12 @@ public class PaletteRasterImage extends RasterImage implements Image {
 
 
     List<Color> palette ;
-    private int height , width ;
+
     private int[][] indexesOfColors ;
 
     public PaletteRasterImage(Color color, int width, int height){
 
-        this.width = width ;
-        this.height = height ;
+        super(width, height);
         this.createRepresentation();
         for(int x = 0 ; x < width ; x++){
             for(int y = 0 ; y < height ; y++){
@@ -27,8 +26,7 @@ public class PaletteRasterImage extends RasterImage implements Image {
     }
     public PaletteRasterImage(Color[][] pixels){
 
-        this.width = pixels.length ;
-        this.height = pixels[0].length ;
+        super(pixels.length, pixels[0].length);
         this.createRepresentation();
         for(int x = 0 ; x < width ; x++){
             for(int y = 0 ; y < height ; y++){
@@ -72,17 +70,6 @@ public class PaletteRasterImage extends RasterImage implements Image {
             }
         }
     }
-    public int getWidth(){
-        return width ;
-    }
-    public int getHeight(){
-        return height ;
-    }
-    protected void setWidth(int width){
-        this.width = width ;
-    }
-    protected void setHeight(int height){
-        this.height = height ;
-    }
+
 
 }
