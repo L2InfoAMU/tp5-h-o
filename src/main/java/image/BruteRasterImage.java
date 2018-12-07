@@ -1,7 +1,7 @@
 package image;
 import javafx.scene.paint.Color;
 
-public class BruteRasterImage implements Image {
+public class BruteRasterImage extends RasterImage implements Image {
 
     private Color[][] pixels ;
     private int width ,height ;

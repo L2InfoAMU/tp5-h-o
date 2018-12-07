@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PaletteRasterImage implements Image {
+public class PaletteRasterImage extends RasterImage implements Image {
 
 
     List<Color> palette ;
@@ -45,7 +45,7 @@ public class PaletteRasterImage implements Image {
     }
 
     public void createRepresentation(){
-        List<Color> palette = new ArrayList<Color>();
+        palette = new ArrayList<Color>();
         indexesOfColors = new int[width][height];
 
     }
@@ -81,7 +81,7 @@ public class PaletteRasterImage implements Image {
     protected void setWidth(int width){
         this.width = width ;
     }
-    protected void Height(int heiht){
+    protected void setHeight(int height){
         this.height = height ;
     }
 
