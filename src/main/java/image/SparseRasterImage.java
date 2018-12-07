@@ -35,12 +35,9 @@ public class SparseRasterImage extends RasterImage implements Image {
 
     }
     public void setPixelColor(Color color, int x, int y){
-        if(!pixelMap.containsKey(pixels[x][y]))
+
             pixelMap.put(pixels[x][y], color);
-        else{
-            pixelMap.remove(pixels[x][y],pixelMap.get(pixels[x][y]));
-            pixelMap.put(pixels[x][y], color);
-        }
+        
 
     }
     public Color getPixelColor(int x, int y){
