@@ -14,7 +14,7 @@ public class SparseRasterImage extends RasterImage implements Image {
         this.createRepresentation();
         for(int x = 0 ;x < width ; x++ ){
             for(int y = 0 ; y < height ; y++){
-
+                pixels[x][y] = new Point(x,y);
                 this.setPixelColor(color,x,y) ;
             }
         }
@@ -24,6 +24,7 @@ public class SparseRasterImage extends RasterImage implements Image {
         this.createRepresentation();
         for(int x = 0 ;x < width ; x++ ){
             for(int y = 0 ; y < height ; y++){
+                this.pixels[x][y] = new Point(x,y);
                 this.setPixelColor(pixels[x][y],x,y) ;
             }
         }
@@ -37,18 +38,18 @@ public class SparseRasterImage extends RasterImage implements Image {
     public void setPixelColor(Color color, int x, int y){
 
             pixelMap.put(pixels[x][y], color);
-        
+
 
     }
     public Color getPixelColor(int x, int y){
         return pixelMap.get(pixels[x][y]);
     }
     private void setPixelsColor(Color[][] pixels){
-        this.width = pixels.length ;
-        this.height = pixels[0].length ;
+        if(width < pixels.length || height < pixels[0].length)
+            throw new ArithmeticException("erreur");
         for(int x = 0 ;x < width ; x++ ){
             for(int y = 0 ; y < height ; y++){
-                //pixelMap.put(this.pixels[x][y],pixels[x][y]);
+
                 this.setPixelColor(pixels[x][y],x,y);
             }
         }
@@ -56,7 +57,7 @@ public class SparseRasterImage extends RasterImage implements Image {
     private void setPixelsColor(Color color){
         for(int x = 0 ;x < width ; x++ ){
             for(int y = 0 ; y < height ; y++){
-                //pixelMap.put(this.pixels[x][y],color);
+
                 this.setPixelColor(color,x,y);
             }
         }
