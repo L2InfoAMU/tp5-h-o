@@ -20,4 +20,7 @@ public class Rectangle implements Shape {
             return false ;
         return true ;
     }
+    public Color getColor(){
+        return pixelColor[0][0];
+    }
 }
