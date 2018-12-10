@@ -25,6 +25,12 @@ public class VectorImage implements Image{
     public Color getPixelColor(int x, int y){
         return pixelColor[x][y] ;
     }
+    public int getWidth(){
+        return pixelColor.length  ;
+    }
+    public int getHeight(){
+        return pixelColor[0].length  ;
+    }
 
 
 }
