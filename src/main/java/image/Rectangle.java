@@ -9,8 +9,8 @@ public class Rectangle implements Shape {
         this.x = x;
         this.y = y ;
         pixelColor = new Color[width][height];
-        for(int wid = x ; wid < x+width ; wid++){
-            for(int hgt = y; hgt < y+height ;hgt++){
+        for(int wid = x ; wid < width ; wid++){
+            for(int hgt = y; hgt < height ;hgt++){
                 pixelColor[wid][hgt]= color ;
             }
         }

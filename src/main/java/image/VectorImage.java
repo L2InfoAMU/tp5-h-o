@@ -11,16 +11,16 @@ public class VectorImage implements Image{
     int height , width ;
 
     VectorImage(List<Shape> shapes, int width, int height){
-        int size = shapes.size();
+
         this.shapes = shapes ;
         this.height = height ;
         this.width = width ;
         pixelColor = new Color[width][height];
-        for(int index = 0 ; index < size ; index ++){
+        for(int index = 0 ; index < shapes.size() ; index ++){
             for(int x = 0 ; x < width ; x++){
                 for(int y = 0 ; y < height ; y++){
-                    if(shapes.get(size).contains(new Point(x,y)))
-                        pixelColor[x][y] = shapes.get(size).getColor();
+                    if(shapes.get(index).contains(new Point(x,y)))
+                        pixelColor[x][y] = shapes.get(index).getColor();
                 }
             }
         }
