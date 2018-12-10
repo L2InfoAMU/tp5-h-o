@@ -15,4 +15,9 @@ public interface Shape {
      * @return the color of the shape.
      */
     Color getColor();
+    int getX();
+    int getY();
+    int getWidth();
+    int getHeight();
+
 }

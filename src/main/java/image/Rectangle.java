@@ -3,24 +3,40 @@ import javafx.scene.paint.Color;
 
 public class Rectangle implements Shape {
 
-    int x,y ;
+    int x,y,width,height ;
     Color[][] pixelColor ;
-    Rectangle(int x, int y, int width, int height, Color color){
+    Color color ;
+    Rectangle(int x, int y, int width, int height, Color color) {
+
         this.x = x;
-        this.y = y ;
+        this.y = y;
+        this.width = width;
+        this.height = height;
         pixelColor = new Color[width][height];
-        for(int wid = x ; wid < width ; wid++){
-            for(int hgt = y; hgt < height ;hgt++){
+        for(int wid = 0 ; wid < width ; wid++){
+            for(int hgt = 0; hgt < height ;hgt++){
                 pixelColor[wid][hgt]= color ;
             }
         }
     }
     public boolean contains(Point point){
-        if(point.x > pixelColor.length+this.x || point.y > pixelColor[0].length+this.y || point.x < x || point.y < y)
+        if(point.x > this.width+this.x || point.y > this.height+this.y || point.x < x || point.y < y)
             return false ;
         return true ;
     }
     public Color getColor(){
         return pixelColor[0][0];
+    }
+    public int getX(){
+        return x ;
+    }
+    public int getY(){
+        return y ;
+    }
+    public int getWidth(){
+        return width ;
+    }
+    public int getHeight(){
+        return height ;
     }
 }
