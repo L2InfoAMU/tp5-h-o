@@ -8,10 +8,13 @@ public class VectorImage implements Image{
 
     List<Shape> shapes ;
     Color[][] pixelColor ;
+    int height , width ;
 
     VectorImage(List<Shape> shapes, int width, int height){
         int size = shapes.size();
         this.shapes = shapes ;
+        this.height = height ;
+        this.width = width ;
         pixelColor = new Color[width][height];
         for(int index = 0 ; index < size ; index ++){
             for(int x = 0 ; x < width ; x++){
@@ -26,10 +29,16 @@ public class VectorImage implements Image{
         return pixelColor[x][y] ;
     }
     public int getWidth(){
-        return pixelColor.length  ;
+        return width  ;
     }
     public int getHeight(){
-        return pixelColor[0].length  ;
+        return height  ;
+    }
+    protected void setWidth(int width){
+        this.width = width ;
+    }
+    protected void setHeight(int height){
+        this.height = height ;
     }
 
 

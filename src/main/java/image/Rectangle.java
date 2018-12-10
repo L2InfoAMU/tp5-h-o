@@ -9,14 +9,14 @@ public class Rectangle implements Shape {
         this.x = x;
         this.y = y ;
         pixelColor = new Color[width][height];
-        for(int wid = 0 ; wid < width ; wid++){
-            for(int hgt = 0; hgt < height ;hgt++){
+        for(int wid = x ; wid < x+width ; wid++){
+            for(int hgt = y; hgt < y+height ;hgt++){
                 pixelColor[wid][hgt]= color ;
             }
         }
     }
     public boolean contains(Point point){
-        if(point.x > pixelColor.length || point.y > pixelColor[0].length)
+        if(point.x > pixelColor.length+this.x || point.y > pixelColor[0].length+this.y || point.x < x || point.y < y)
             return false ;
         return true ;
     }
